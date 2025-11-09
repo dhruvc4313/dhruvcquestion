@@ -260,7 +260,7 @@ printf("\n number is 4digit");
 else if(x<32768)
 printf("\n number is 5digit");
 }
-printf("out of range");
+
 }`
         },
         {
@@ -393,7 +393,7 @@ void main()
 }`
         },
         {
-            id: "d9",
+            id: "da",
             question: " Enter the number from the user it the number is negative or positive and find out of that number ?",
             answer: `
     #include <stdio.h>
@@ -514,7 +514,7 @@ void main()
 `
         },
         {
-            id: "d12",
+            id: "d12a",
             question: " Enter three numbers from users and tell which is greater ?",
             answer: `#include <stdio.h>
 #include <conio.h>
@@ -752,8 +752,10 @@ getch();
             id: "d19",
             question: "Enter date, month, year and check it is valid date or not ?",
             answer: `
+            #include<stdio.h>
+ #include<conio.h>
     void main()
-{
+{ 
 int d,m,y;
 clrscr();
 printf("Check the valid year");
@@ -2264,7 +2266,7 @@ getch();
     "UNION": [],
 
     "STRUCTURES": [{
-        id: "s1",
+        id: "src1",
         question: "Create structure of employee which there is emp.ID, name, designation of 50 employees from user, print details in tabular form ?",
 
         answer: `
@@ -2299,7 +2301,7 @@ void main() {
         printf("\n");
     };
 }`},
-    {
+    {   id:"src2",
         question: " Create structure of employee which there is emp.ID, name, designation of 50 employees from user and print only name of the employee ?",
         answer: `
     
@@ -2337,6 +2339,7 @@ void main()
     getch();
 }`
     }, {
+        id:"src3",
         question: "Create structure of employee which there is emp.ID, name, designation of 50 employees from user and print name character with emp.ID in tabular form ?",
 
         answer: `
@@ -2376,7 +2379,7 @@ void main()
 }`
     },
 
-    {
+    {   id:"src4",
         question: "Enter student details like roll name, fee, DOB and print all the detail by ascending order of roll number ?",
         answer: `
     #include <stdio.h>
@@ -3046,8 +3049,8 @@ void main(){
 void main(){
     int n,i;
     clrscr();
-    scanf("%d",&n);
-    for(i=1;i<=n;i++) 
+    
+    for(i=1;i<=100000;i++) 
     printf("%d\n", i);
     
 }`
@@ -3112,7 +3115,7 @@ void main(){
     int i;
     clrscr();
     for(i=1;i<=20;i++)
-     printf("4*%d=%d", i, 4*i);
+     printf("4*%d=%d\n", i, 4*i);
     
 }`
     },
@@ -3226,7 +3229,7 @@ getch();
 #include <conio.h>
 void main(){
     int n,t,rev=0;
-    printf("enter no to reverse");
+    printf("enter no to check");
     scanf("%d",&n);
     t = n; if(t<0) t = -t;
     while(t>0)

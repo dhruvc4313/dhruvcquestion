@@ -280,6 +280,17 @@ body {
   color: #1b3c26;
 }
 
+.output {
+  background: #f0fff0;
+  color: #1b5e20;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #a5d6a7;
+  font-family: "Courier New", monospace;
+}
+
+
 footer {
   background: linear-gradient(120deg, #4caf50, #030f03);
   text-align: center;

@@ -99,6 +99,8 @@ window.loadCategory = function (category) {
           <p><strong>Q${i + 1}:</strong> ${q.question}</p>
           <button class="show-btn" onclick="toggleAnswer(this)">Show Answer</button>
           <pre class="answer"></pre>
+          <button class="show-btn" onclick="toggleOutput(this)">Show Output</button>
+          <pre class="output" style="display:none;"></pre>
         </div>`
       )
       .join("")}
@@ -106,7 +108,12 @@ window.loadCategory = function (category) {
   document.querySelectorAll('.answer').forEach((pre,i)=>{
     pre.textContent=questions[i].answer;
   });
-};
+  
+  document.querySelectorAll('.output').forEach((pre,i)=>{
+    const qid = questions[i].id;
+    pre.textContent = outputs[qid] || "not available";
+  
+});
 
 
 window.toggleAnswer=function(button){
@@ -120,6 +127,19 @@ window.toggleAnswer=function(button){
     }
 };
 
+
+window.toggleOutput = function(button) {
+  const output = button.parentElement.querySelector(".output");
+  if(output.style.display==="block"){
+    output.style.display = "none";
+    button.textContent = "Show Output";
+  }
+  else{
+    output.style.display = "block";
+    button.textContent = "Hide Output";
+  }
+  };
+}
 homebtn.addEventListener("click",loadhome);
 aboutbtn.addEventListener("click",loadAbout);
 document.getElementById("sourcebtn").addEventListener("click",loadSourceFiles);
