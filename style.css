@@ -301,3 +301,78 @@ footer {
 }
 
 
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .navbar h1 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar button {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Banner */
+  .banner {
+    height: 40vh;
+    background-position: center;
+  }
+
+  .banner-text {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .banner-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .categories {
+    grid-template-columns: 1fr; 
+    gap: 1rem;
+  }
+
+  .card img {
+    height: 140px;
+  }
+
+
+  .show-btn,
+  .output-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.6rem;
+  }
+
+  pre.answer,
+  pre.output {
+    font-size: 0.8rem;
+    padding: 0.8rem;
+    overflow-x: auto;
+  }
+
+ 
+  footer p {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .question {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .question {
+    flex-direction: column;
+  }
+}
+
+}
