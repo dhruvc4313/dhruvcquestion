@@ -9,29 +9,34 @@ const aboutbtn= document.getElementById("aboutbtn");
 
 //for category card
 function loadhome() {
-  content.innerHTML = `
-    <section class="home-section">
-      <h2>Welcome to C Programming Assignments</h2>
-      <p>Explore categorized C programs with explanations and working code examples.</p>
+
+  document.body.classList.remove("cpp-theme");
+
+ content.innerHTML = `
+  <section class="home-section">
+
+    <div class="content-wrapper">
+
+      <h2>Select Semester</h2>
 
       <div class="categories">
-        ${Object.keys(categories)
-          .map((cat) => {
-            const info = categoryInfo[cat] || {
-              image: "images/default.jpg",
-              desc: "Questions will be added soon...",
-            };
-            return `
-              <div class="card" onclick="loadCategory('${cat}')">
-                <img src="${info.image}" alt="${cat}">
-                <h3>${cat}</h3>
-                <p>${info.desc}</p>
-              </div>`;
-          })
-          .join("")}
+
+        <div class="card" onclick="loadSemester('sem1')">
+          <h3 style="color:#16a34a;">🟢 C Programming</h3>
+          <p>Learn core programming fundamentals</p>
+        </div>
+
+        <div class="card" onclick="loadSemester('sem2')">
+          <h3 style="color:#2563eb;">🔵 C++ Programming</h3>
+          <p>Object-oriented programming concepts</p>
+        </div>
+
       </div>
-    </section>
-  `;
+
+    </div>
+
+  </section>
+`;
 }
 
 function loadSourceFiles(){
@@ -59,26 +64,28 @@ function loadAbout(){
     <p>
     <h2> ABOUT THE ASSIGNMENT</h2>
 
-This assignment is based on the basics of the C programming language. It includes simple programs on input/output operations, control statements, and logic building. The main objective is to help students understand the syntax and structure of C and improve their programming and problem-solving skills.</p>
+This website showcases my learning journey across first and second semesters, featuring assignments and programs based on C and C++ programming. It covers topics such as input/output, control structures, arrays, functions, and object-oriented programming.
+
+The purpose of this platform is to track my growth, improve problem-solving skills, and present my work through a live, professionally deployed website.</p>
 <div class="ack">
 <br><h2>Acknowledgement</h2>
 
 <p>
-I, <b>Dhruv Goyal</b>, student of <b>BCA–1(A), Roll No. 4313/25</b>, am thankful to<b> Mr. Chetan Gupta</b> for his guidance and support in completing this assignment. I also thank my college and classmates for their help and encouragement.</p>
+I, <b>Dhruv Goyal</b>, student of <b>BCA–II SEM (A), Roll No. 4313/25</b>, am thankful to<b> Mr. Chetan Gupta</b> for his guidance and support in completing this assignment. I also thank my college and classmates for their help and encouragement.</p>
 <div class="submitted">
 <b>
 <br>Submitted by: Dhruv Goyal
-<br>Stream: BCA–1(A)
+<br>Stream: BCA–II SEM (A)
 <br>Roll No.: 4313/25
 <br>Submitted to: Mr. Chetan Gupta
-<br>Date: 7 November 2025 </b>
+<br>Date: 6 April 2026 </b>
 </div>
 </div>
 </section>`;
 }
 
-window.loadCategory = function (category) {
-  const questions = categories[category];
+window.loadCategory = function (category, sem) {
+  const questions = sem==="sem1"? categories[category]:cppCategories[category];
 
   if (!questions || questions.length === 0) {
     content.innerHTML = `
@@ -139,6 +146,48 @@ window.toggleOutput = function(button) {
     button.textContent = "Hide Output";
   }
   };
+}
+function loadSemester(sem) {
+
+  // remove previous theme
+  document.body.classList.remove("cpp-theme");
+
+  // apply ONLY for C++
+  if (sem === "sem2") {
+    document.body.classList.add("cpp-theme");
+  }
+
+  let data, info;
+
+  if (sem === "sem1") {
+    data = categories;
+    info = categoryInfo;
+  } else {
+    data = cppCategories;
+    info = cppInfo;
+  }
+
+  content.innerHTML = `
+    <button class="back-btn" onclick="loadhome()">← Back</button>
+    <h2>${sem === "sem1" ? "C Programming" : "C++ Programming"}</h2>
+
+    <div class="categories">
+      ${Object.keys(data)
+        .map((cat) => {
+          const details = info[cat] || {
+            desc: "Coming soon..."
+          };
+
+          return `
+            <div class="card" onclick="loadCategory('${cat}', '${sem}')">
+  <img src="${details.image}" alt="${cat}">
+  <h3>${cat}</h3>
+  <p>${details.desc}</p>
+</div>`;
+        })
+        .join("")}
+    </div>
+  `;
 }
 homebtn.addEventListener("click",loadhome);
 aboutbtn.addEventListener("click",loadAbout);
