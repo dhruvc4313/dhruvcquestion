@@ -1699,7 +1699,73 @@ Perimeter of Square: 40`,
 Hawk screeches.
 
 Eagle is soaring in the sky.
-Hawk is flying high.`
+Hawk is flying high.`,
+
+"cpp_string_40": `Enter the string : hello world
+First Repeated Character in string is: l`,
+
+  "cpp_string_41": `Enter the string : hello world how are you
+Total words in the strings is: 4`,
+
+  "cpp_string_42": `Enter the string : hello world
+Total words in the strings is: 3`,
+
+  "cpp_string_43": `Enter any 5 names you like:
+Name 1
+Enter: Zara
+Name 2
+Enter: Alice
+Name 3
+Enter: Mike
+Name 4
+Enter: Bob
+Name 5
+Enter: John
+Here are all the Names is Alphabetical order
+1) Alice
+2) Bob
+3) John
+4) Mike
+5) Zara`,
+
+  "cpp_string_44": `Enter the string : good morning everyone
+Total words in the strings is: 2`,
+
+  "cpp_string_45": `Enter the following details:
+Principal Amount: 10000
+Rate of interest(ROI): 5
+Number of times interest is componded in 1 year: 12
+Time (in years): 3
+Future Investment Total(Considiring Compund Interest): 11616.2`,
+
+  "cpp_string_46": `Enter 1st Character: A
+Enter 2nd Character: P
+All the characters between entered two characters are:
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O`,
+
+  "cpp_string_47": `Valid Password criteria: Password should only contains alphanumberic characters and has maximum length of 15 characters!
+Enter a Password: Hello123
+Password Valid!`,
+
+  "cpp_string_48": `Current system time is: 06-04-2026 10:25:43`,
+
+  "cpp_string_49": `Enter Number 1: 2
+Enter Number 2: 4
+Enter Number 3: 6
+Method returned False`
 
 
 

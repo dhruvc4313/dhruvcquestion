@@ -2374,6 +2374,356 @@ int main(){
     }
    cout<<"Both strings are created with same characters";
 }`
+  },
+
+  {
+    id: "cpp_string_40",
+    question: "Write a C++ program to find out the first repeated character from an input string.",
+    answer: `// Write a program to find out first non repeated character from input String?
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string str;
+    char ch;
+    int isRepeated = 0;
+
+    cout << "Enter the string : ";
+    getline(cin, str);
+
+    for (int i = 0; i < (str.length()); i++)
+    {
+        ch = str[i];
+
+        for (int j = i + 1; j < str.length(); j++)
+        {
+            if (ch == str[j])
+            {
+                isRepeated = 1;
+                break;
+            }
+        }
+
+        if (isRepeated)
+        {
+            break;
+        }
+    }
+
+    if (isRepeated)
+    {
+        cout << "First Repeated Character in string is: " << ch;
+    }
+    else
+    {
+        cout << "String has no repeatitive characters";
+    }
+
+    return 0;
+}`
+  },
+  {
+    id: "cpp_string_41",
+    question: "Write a C++ program to count all words in a string.",
+    answer: `// Write a C++ method to count all words in a string
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string str;
+    char ch;
+    int wordCount = 1;
+
+    cout << "Enter the string : ";
+    getline(cin, str);
+
+    for (int i = 0; i < (str.length()); i++)
+    {
+        ch = str[i];
+        if (ch == 9 || ch == 32)
+        {
+            wordCount++;
+        }
+    }
+
+    cout << "Total words in the strings is: " << wordCount - 1;
+
+    return 0;
+}`
+  },
+  {
+    id: "cpp_string_42",
+    question: "Write a C++ program to count all vowels in a string.",
+    answer: `// Write a C++ method to count all vowels in a string
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string str;
+    char ch;
+    int vowelCount = 0;
+
+    cout << "Enter the string : ";
+    getline(cin, str);
+
+    for (int i = 0; i < (str.length()); i++)
+    {
+        ch = str[i];
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
+        {
+            vowelCount++;
+        }
+    }
+
+    cout << "Total words in the strings is: " << vowelCount;
+
+    return 0;
+}`
+  },
+  {
+    id: "cpp_string_43",
+    question: "Write a C++ program to sort names in alphabetical order.",
+    answer: `// Write a C++ Program to Sort Names in an Alphabetical Order
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string names[5];
+    string temp;
+
+    cout << "Enter any 5 names you like: " << endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "Name " << i + 1 << endl;
+        cout << "Enter: ";
+        getline(cin, names[i]);
+    }
+
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = i + 1; j < 5; j++)
+        {
+            if (names[i].compare(names[j]) > 0)
+            {
+                temp = names[i];
+                names[i] = names[j];
+                names[j] = temp;
+            }
+        }
+    }
+
+    cout << "Here are all the Names is Alphabetical order" << endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << i + 1 << ") " << names[i] << endl;
+    }
+
+    return 0;
+}`
+  },
+  {
+    id: "cpp_string_44",
+    question: "Write a C++ program to count all the words in a string using tab and space detection.",
+    answer: `// Write a C++ method to count all the words in a string.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string str;
+    char ch;
+    int wordCount = 1;
+
+    cout << "Enter the string : ";
+    getline(cin, str);
+
+    for (int i = 0; i < (str.length()); i++)
+    {
+        ch = str[i];
+        if (ch == 9 || ch == 32)
+        {
+            wordCount++;
+        }
+    }
+
+    cout << "Total words in the strings is: " << wordCount - 1;
+
+    return 0;
+}`
+  },
+  {
+    id: "cpp_string_45",
+    question: "Write a C++ program to compute the future investment value at a given interest rate for a specified number of years using compound interest.",
+    answer: `// Write a C++ method to compute the future investment value at a given interest rate for a specified number of years.
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+    float principal, roi, time, n, total;
+
+    cout << "Enter the following details: " << endl;
+    cout << "Principal Amount: ";
+    cin >> principal;
+    cout << "Rate of interest(ROI): ";
+    cin >> roi;
+    cout << "Number of times interest is componded in 1 year: ";
+    cin >> n;
+    cout << "Time (in years): ";
+    cin >> time;
+
+    total = (principal * (pow((1 + ((roi / 100) / n)), (n * time))));
+
+    cout << "Future Investment Total(Considiring Compund Interest): " << total;
+}`
+  },
+  {
+    id: "cpp_string_46",
+    question: "Write a C++ program to print all characters between two input characters.",
+    answer: `// Write a C++ method to print characters between two characters (i.e. A to P).
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char ch1, ch2;
+
+    cout << "Enter 1st Character: ";
+    cin >> ch1;
+    cout << "Enter 2nd Character: ";
+    cin >> ch2;
+
+    if (ch2 <= ch1)
+    {
+        cout << "Invalid Characters or sequence order entered!";
+        return 0;
+    }
+
+    cout << "All the characters between entered two characters are: " << endl;
+    for (int i = (int(ch1) + 1); i < int(ch2); i++)
+    {
+        cout << char(i) << endl;
+    }
+
+    return 0;
+}`
+  },
+  {
+    id: "cpp_string_47",
+    question: "Write a C++ program to check whether a string is a valid password. A valid password should only contain alphanumeric characters and have a maximum length of 15 characters.",
+    answer: `// Write a C++ method to check whether a string is a valid password.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string password;
+    char ch;
+    int isValid = 1;
+
+    cout << "Valid Password criteria: Password should only contains alphanumberic characters and has maximum length of 15 characters!";
+
+    cout << "\\nEnter a Password: ";
+    cin.ignore();
+    getline(cin, password);
+
+    if (password.length() > 15)
+    {
+        isValid = 0;
+    }
+
+    for (int i = 0; i < password.length(); i++)
+    {
+        ch = password[i];
+        if (!((ch <= 'z' && ch >= 'a') || (ch <= 'Z' && ch >= 'A') || (ch >= '0' && ch <= '9')))
+        {
+            isValid = 0;
+        }
+    }
+
+    if (isValid)
+    {
+        cout << "Password Valid!";
+    }
+    else
+    {
+        cout << "Password Invalid!";
+    }
+
+    return 0;
+}`
+  },
+  {
+    id: "cpp_string_48",
+    question: "Write a C++ program to display the current date and time in DD-MM-YYYY HH:MM:SS format.",
+    answer: `// Write a C++ method to display the current date and time.
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+int main() {
+    time_t currentTime = time(0);
+
+    // Convert to local time structure
+    tm *localTime = localtime(&currentTime);
+
+    char buffer[100];
+
+    // Format: DD-MM-YYYY HH:MM:SS
+    strftime(buffer, sizeof(buffer), "%d-%m-%Y %H:%M:%S", localTime);
+
+    cout << "Current system time is: " << buffer << endl;
+
+    return 0;
+}`
+  },
+  {
+    id: "cpp_string_49",
+    question: "Write a C++ program that accepts three integers and returns true if one of them is the middle point between the other two integers, otherwise returns false.",
+    answer: `// Write a C++ method that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false
+#include <iostream>
+using namespace std;
+
+int checkmiddle(int &a, int &b, int &c)
+{
+
+    if ((a + b == 2 * c) || (b + c == 2 * a) || (c + a == 2 * a))
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int main()
+{
+    int arr[3];
+
+    for (int i = 0; i < 3; i++)
+    {
+        cout << "Enter Number " << i + 1 << ": ";
+        cin >> arr[i];
+    }
+
+    if (checkmiddle(arr[0], arr[1], arr[2]))
+    {
+        cout << "Method returned True";
+    }
+    else
+    {
+        cout << "Method returned False";
+    }
+
+    return 0;
+}`
   }
 
 
